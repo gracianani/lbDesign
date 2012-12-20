@@ -72,6 +72,24 @@ a:hover,a:focus,a:active{
 	width: 1000px;
 }
 
+.btn {
+	background:url(Images/texture-brown.jpg);
+	color: #e3e1d1;
+	border:none;
+	text-shadow: 1px 1px 0 #7c6556;
+	font-style: italic;
+}
+.btn:hover {
+	color:#eec543;
+}
+[class^="ic-"], [class*=" ic-"] {
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	overflow: hidden;
+	background-position: left top;
+	background-repeat: no-repeat;
+}
 /* ==========================================================================
    top
    ========================================================================== */
@@ -188,14 +206,75 @@ a:hover,a:focus,a:active{
    footer
    ========================================================================== */
 #footer {
-	padding:0 0 100px;
+	padding:0 0 60px;
 	margin-top: 40px;
 }
 #footerTop{
 	background: url(Images/footerTop.jpg) repeat-x;	
 	height: 15px;
+	margin-bottom: 30px;
 }  
 
+#footer-contact li {
+	float: left;
+	display: inline-block;
+	margin-right: 30px;
+	list-style: none;
+}
+#footer-contact a {
+	color: #e3e1d1;
+}
+#footer-contact p {
+	font-style: italic;
+	margin-top: 10px;
+}
+.ic-mail,.ic-home,.ic-phone {
+	background-image: url(Images/icon-contact.png);
+}
+.ic-home {
+	background-position: left top;
+}
+.ic-mail {
+	background-position: left -192px;
+}
+.ic-phone {
+	background-position: left -96px;
+}
+#footer-links {
+	text-align: right;
+	font-style: italic;
+	color: #5f4639;
+}
+#footer-links a {
+	color: #7c6556;
+}
+#footer-links a:hover {
+	color: #eec543;
+}
+.ic-fb,.ic-twitter,.ic-g {
+	background-color: rgba(255,255,255,0.2);
+	background-image: url(Images/share-icon-dark.png);
+	border-radius: 50%;
+	margin-left: 10px;
+}
+.ic-fb {
+	background-position: 8px -142px;
+}
+.ic-fb:hover {
+	background-color: #0d6ac1;
+}
+.ic-twitter {
+	background-position: 8px 8px;
+}
+.ic-twitter:hover {
+	background-color: #12b1d9;
+}
+.ic-g {
+	background-position: 8px -18px;
+}
+.ic-g:hover {
+	background-color: #b82b0a;
+}
 /* ==========================================================================
    main
    ========================================================================== */
@@ -228,6 +307,9 @@ a:hover,a:focus,a:active{
 }
 #homeSlides {
 	border:1px solid #c84c0b;
+}
+.home-customer-content,.home-lucky-content,.home-menu-content {
+	color: #70503d;
 }
 #home-customer {
 	height: 322px;
@@ -275,8 +357,34 @@ a:hover,a:focus,a:active{
 	color: #7c6556;
 	font-weight: normal;
 }
-#home-lucky a {
+#home-lucky a,.home-menu-content a {
 	color: #c84c0b;
 }
 
+.home-menu-content {
+	background:url(Images/texture-white.jpg);
+	border-radius: 10px;
+	padding:20px;
+	line-height: 32px;
+}
+.home-menu-content input {
+	margin:0;
+}
+.home-menu-content table {
+	width: 100%;
+}
+.home-menu-content tr {
+	border-bottom: 1px dotted #c5b5aa;
+}
+.home-menu-content tr:hover {
+	background-color: rgba(255,255,255,0.4);
+	color: #c84c0b;
+}
+.home-menu-content tr:last-child {
+	border-bottom: none;
+	background:none!important;
+}
+.home-menu-content tr:last-child td {
+	padding-top: 10px;
+}
 
