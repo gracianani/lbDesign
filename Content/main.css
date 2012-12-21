@@ -518,8 +518,8 @@ a:hover,a:focus,a:active{
 .span3 {
 	width: 240px;
 }
-#orderInfo {
-	margin:0;
+#orderInfo,#lunchboxList,#restaurantList {
+	margin-left:0;
 }
 #orderInfo li {
 	list-style: none;
@@ -537,4 +537,66 @@ a:hover,a:focus,a:active{
 	border-radius: 10px;
 	padding:20px;
 	margin-bottom: 20px;
+}
+.lunchboxItem {
+	list-style: none;
+	position: relative;
+	text-align: center;
+	width:25%;
+	float: left;
+	display: inline-block;
+	margin-top: 30px;
+	padding:10px 0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.lunchboxItem:hover,.lunchboxItem:active,.lunchboxItem:focus {
+	background-color: rgba(255,250,232,0.4);
+}
+.lunchboxItem:hover .lunchbox-Price,.lunchboxItem:active .lunchbox-Price,.lunchboxItem:focus .lunchbox-Price{
+	color: #eec543;
+}
+.lunchboxItem:hover .ic-lunchbox,.lunchboxItem:active .ic-lunchbox,.lunchboxItem:focus .ic-lunchbox{
+	color: #c84c0b;
+}
+.ic-lunchbox {
+	width:85px;
+	height: 33px;
+	background: url(Images/lunchboxicon.png) no-repeat left top;
+	padding-top:48px;
+	color: #80480c;
+	font-style: italic;
+	display: block;
+	margin: 0 auto;
+}
+.entree2 {
+	background-position: left -81px;
+}
+.entree3 {
+	background-position: left -162px;
+}
+.entree4 {
+	background-position: left -243px;
+}
+.lunchbox-entreeName big {
+	font-size: 18px;
+}
+.lunchbox-entreeName {
+	font-size: 12px;
+}
+.lunchbox-Price {
+	width: 53px;
+	height: 45px;
+	position: absolute;
+	right: 7px;
+	top:-15px;
+	background: url(Images/pricebgsmall.png) no-repeat;
+	font-family: 'DancingScriptOTRegular';
+	font-size: 18px;
+	font-style: italic;
+	color: #e8e4d5;
+	padding-top:10px;
+}
+.lunchbox-Price small {
+	font-size: 11px;
 }
