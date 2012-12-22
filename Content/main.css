@@ -553,6 +553,7 @@ a:hover,a:focus,a:active{
 .lunchboxItem:hover,.lunchboxItem:active,.lunchboxItem:focus {
 	background-color: rgba(255,250,232,0.4);
 }
+
 .lunchboxItem:hover .lunchbox-Price,.lunchboxItem:active .lunchbox-Price,.lunchboxItem:focus .lunchbox-Price{
 	color: #eec543;
 }
@@ -567,7 +568,7 @@ a:hover,a:focus,a:active{
 	color: #80480c;
 	font-style: italic;
 	display: block;
-	margin: 0 auto;
+	margin: 0 auto 10px;
 }
 .entree2 {
 	background-position: left -81px;
