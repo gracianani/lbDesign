@@ -43,12 +43,23 @@ $(document).ready(function(){
 	
 	$('[rel="tooltip"]').tooltip();
 	
+	$('#lunchbox').on('click','.icon-remove', function(e) {
+		var remove = $(e.target);
+		var li = remove.parent();
+		if (li.parent().attr('id') == 'lunchbox-others' ) {
+			li.remove();
+		} else {
+			li.html('').removeClass('lunchbox-filledItem').addClass('lunchbox-emptyItem');	
+		}
+	});
 	$('.course').on('click', function(e){
 		$(e.currentTarget).toggleClass('selected');
 		
+		var type = $('.tab-pane.active').attr('data-type');
+		
 		if ($(e.currentTarget).hasClass('selected')) {
 		var courseImg = $(e.currentTarget).find('img');
-		var lunchbox = $('.lunchboxBody');
+		var lunchbox = $('#lunchbox-'+type);
 		
 		var productX 		= courseImg.offset().left;
 		var productY 		= courseImg.offset().top;
@@ -75,16 +86,14 @@ $(document).ready(function(){
 		
 		
 			//success
-			addToLunchbox({type:'entrees',name:'Kung Pao Chicken'});
+			addToLunchbox({type:type,name:'Kung Pao Chicken'});
 			
 			$.ajax({  
 				type: "POST",  
 				url: "inc/functions.php",  
 				data: { productID: 'nothing', action: "addToBasket"},  
 				success: function(theResponse) {
-					
-					
-					
+										
 				}  
 			});  
 		
