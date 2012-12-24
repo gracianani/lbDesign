@@ -515,6 +515,9 @@ a:hover,a:focus,a:active{
 .span9 {
 	width: 720px;
 }
+.span8 {
+	width: 660px;
+}
 .span3 {
 	width: 240px;
 }
@@ -600,4 +603,188 @@ a:hover,a:focus,a:active{
 }
 .lunchbox-Price small {
 	font-size: 11px;
+}
+.lunchBoxContaienr {
+	position: relative;
+}
+.lunchbox-priceBig {
+	width: 79px;
+	height: 60px;
+	position: absolute;
+	left: 170px;
+	top:-15px;
+	background: url(Images/pricebgbig.png) no-repeat;
+	font-family: 'DancingScriptOTRegular';
+	font-size: 26px;
+	font-style: italic;
+	color: #e8e4d5;
+	padding-top:20px;
+	text-align: center;
+}
+.lunchbox-priceBig small {
+	font-size: 14px;
+}
+.lunchboxTop {
+	background: url(Images/lunchboxContainerTop.png) no-repeat;
+	width: 229px;
+	height: 41px;
+	padding-top:20px;
+	padding-left: 30px;
+	font-family: "JournalRegular";
+	font-size: 24px;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.4);
+}
+.lunchboxBody {
+	background: url(Images/lunchboxContainerRepeat.png) repeat-y;
+	width: 248px;
+	padding:10px 5px 10px 6px;
+}
+.lunchboxBottom {
+	background: url(Images/lunchboxContainerBottom.png) no-repeat;
+	width: 259px;
+	height: 40px;	
+}
+.lunchboxDiv {
+	background: url(Images/lunchboxContainerDiv.png) no-repeat;
+	width: 248px;
+	height: 6px;
+	margin: 10px 0;
+}
+.lunchboxBody ul {
+	margin-left: 10px;
+}
+.lunchboxBody li {
+	list-style-type: none;
+	line-height: 25px;
+	margin:5px 10px 5px 0;
+	border-bottom: 1px dotted #dbccc0;
+}
+.lunchbox-title {
+	color: #cd7b57;
+	font-style: italic;
+	margin-bottom: 0;
+	font-size: 12px;
+}
+.lunchbox-filledItem {
+	color: #6b5245;
+}
+.lunchbox-filledItem .input-mini {
+	width: 20px;
+	padding:1px 0 1px 2px;
+	position: relative;
+	top:4px;
+}
+.lunchbox-filledItem i,.lunchbox-filledNum,.lunchbox-filledPrice {
+	margin:0 0 0 5px;
+}
+.lunchbox-filledItem i {
+	cursor: pointer;
+}
+.lunchbox-filledItem .icon-remove {
+	
+}
+.lunchbox-filledItem i:hover {
+	background-image: url(Images/glyphicons-halflings-orange.png);	
+}
+.lunchbox-filledNum {
+	font-size: 11px;
+}
+.lunchbox-filledPrice {
+	color: #5c7e04;
+}
+.lunchbox-emptyItem {
+	height: 23px;
+	border:1px dotted #dbccc0;
+	background-color: rgba(255,255,255,0.4);
+	width: 66%;
+}
+.nav-tabs {
+	margin-bottom: 0;
+	margin-left: 10px;
+}
+.nav-tabs > li > a {
+	background:url(Images/texture-brown.jpg);
+	color: #FFF;
+	padding:10px 25px;
+	font-size: 16px;
+}
+.nav-tabs > li > a:hover  {
+	background:url(Images/texture-orange.png);
+	
+}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+	background:url(Images/texture-white.jpg);
+}
+.icon-orange {
+	background-image: url(Images/glyphicons-halflings-orange.png);
+}
+.icon-brown {
+	background-image: url(Images/glyphicons-halflings-brown.png);
+}
+.courseList {
+	margin-left: 0;
+}
+.course {
+	
+	background:url(Images/texture-white2.jpg);
+	float: left;
+	display: inline-block;
+	width: 150px;
+	padding:15px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+	margin: 10px;
+	border-radius: 5px;
+	list-style: none;
+	text-align: center;
+	color: #5d4f48;
+	position: relative;
+	cursor: pointer;
+}
+.course:hover {
+	color: #c84c0b !important;	
+}
+.course:hover img {
+	border:3px solid #c84c0b !important;
+	width: 144px;
+	height: 144px;
+}
+.course img {
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+	width: 150px;
+	height: 150px;
+	margin-bottom: 10px;
+}
+.course i {
+	display: none;
+}
+.course p {
+	margin-bottom: 5px;
+}
+.course .price {
+	font-size: 12px;
+}
+.course.selected img {
+	border:3px solid #5c7e04;
+	width: 144px;
+	height: 144px;
+}
+.course.selected {
+	color: #5c7e04;
+}
+.course.selected i{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background:url(Images/selected.png) no-repeat;
+	display: block;
+	top:2px;
+	right: 2px;
+}
+.tab-content {
+	overflow: visible;
+}
+#lunchbox {
+	margin-top: 40px;
 }

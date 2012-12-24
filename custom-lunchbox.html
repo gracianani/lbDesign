@@ -95,21 +95,123 @@
         </ul>
         <div class="container">
         	<div class="row">
-	        <div class="span9">
-	        	<div class="lightBox">
-
-	        	</div>
-
-	        </div>
-	        <div class="span3">
+	        <div class="span8">
+	        	<ul class="nav nav-tabs" id="fillLunchboxTab">
+				  <li class="active"><a href="#entrees"  data-toggle="tab">Entrees</a></li>
+				  <li><a href="#sides" data-toggle="tab">Sides</a></li>
+				  <li><a href="#others" data-toggle="tab">Others</a></li>
+				</ul>
+				<div class="tab-content lightBox">
+				  <div class="tab-pane active" id="entrees">
+					  <ul id="entreeList" class="courseList clearfix">
+					  	<li class="course">
+						  	<img src="Content/Images/restaurant/kpc.jpg" />
+						  	<p>Kung Pao Chicken</p>
+						  	<i></i>
+					  	</li>
+					  	<li class="course">
+						  	<img src="Content/Images/restaurant/msp.jpg" />
+						  	<p>Kung Pao Chicken</p>
+						  	<i></i>
+					  	</li>
+					  	<li class="course">
+						  	<img src="Content/Images/restaurant/veg.jpg" />
+						  	<p>Kung Pao Chicken</p>
+						  	<i></i>
+					  	</li>
+					  	<li class="course">
+						  	<img src="Content/Images/restaurant/zzt.jpg" />
+						  	<p>Kung Pao Chicken</p>
+						  	<i></i>
+					  	</li>
+					  	<li class="course selected">
+						  	<img src="Content/Images/restaurant/oc.jpg" />
+						  	<p>Orange Chicken</p>
+						  	<i></i>
+					  	</li>
+					  </ul>
+					  <div class="clearfix">
+					  	<a href="Prev" class="btn pull-left">< Previous</a>
+					  	<a href="Prev" class="btn pull-right">Next ></a>
+					  </div>
+				  </div>
+				  <div class="tab-pane" id="sides">
+					  <ul id="sidesList" class="courseList clearfix">
+					  	<li class="course">
+						  	<img src="Content/Images/restaurant/rice.jpg" />
+						  	<p>Rice</p>
+						  	<i></i>
+					  	</li>
+					  	<li class="course selected">
+						  	<img src="Content/Images/restaurant/noodles.jpg" />
+						  	<p>Noodle</p>
+						  	<i></i>
+					  	</li>
+					  </ul>
+					  <div class="clearfix">
+						  	<a href="#entrees" class="btn pull-left">< Previous</a>
+						  	<a href="#others" class="btn pull-right">Next ></a>
+					  </div>
+				  </div>
+				  <div class="tab-pane" id="others">
+				  		<ul id="sidesList" class="courseList clearfix">
+					  	<li class="course">
+						  	<img src="Content/Images/restaurant/zc.jpg" />
+						  	<p>Zero Coca</p>
+						  	<p class="price">$1.00(per can)</p>
+						  	<i></i>
+					  	</li>
+					  	<li class="course selected">
+						  	<img src="Content/Images/restaurant/fanta.jpg" />
+						  	<p>Fanta</p>
+						  	<p class="price">$1.00(per can)</p>
+						  	<i></i>
+					  	</li>
+					  </ul>
+					  <div class="clearfix">
+						  	<a href="#sildes" class="btn pull-left">< Previous</a>
+						  	<a class="btn btn-primary pull-right"><i class="icon-white icon-shopping-cart"></i> Add to Cart</a>
+					  </div>
+				  </div>
+				</div>
 	        	<ul id="orderInfo" class="lightBox">
 	        	<li><span class="info-type">Location:</span> UCLA (<a  href="#">Edit</a>)</li>
 	        	<li><span class="info-type">Deliver Location&Time:</span> Central Garden - 12:00 am (<a  href="#">Edit</a>)</li>
 	        	<li><span class="info-type">Restaurant:</span> China Day (<a  href="#">Edit</a>)</li>
+	        	<li><span class="info-type">Lunchbox:</span> 3-Entrees (<a  href="#">Edit</a>)</li>
 	        	</ul>
-		        
 	        </div>
-        	</div>
+	        <div class="span4">
+
+		        <div id="lunchbox" class="lunchBoxContaienr">
+		        	<div class="lunchboxTop">My Lunchbox</div>
+		        	<div class="lunchboxBody">
+		        		<ul id="lunchbox-entrees"">
+		        		<p class="lunchbox-title">Entrees</p>
+			        	<li class="lunchbox-filledItem"><i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> Kung Pao Chicken</li>
+			        	<li class="lunchbox-emptyItem"></li>
+			        	<li class="lunchbox-emptyItem"></li>
+		        		</ul>
+			        	
+			        	<div class="lunchboxDiv"></div>
+			        	
+			        	<ul id="lunchbox-sides"">
+		        		<p class="lunchbox-title">Sides</p>
+			        	<li class="lunchbox-emptyItem"></li>
+		        		</ul>
+		        		
+		        		<div class="lunchboxDiv"></div>
+			        	<ul id="lunchbox-others"">
+		        		<p class="lunchbox-title">Others</p>
+		        		<li class="lunchbox-filledItem"><i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> Coca Cola <span class="lunchbox-filledNum">X <input type="text" value="7" class="input-mini"/></span> = <span class="lunchbox-filledPrice">$7.00</span></li>
+		        		</ul>
+		        	</div>
+		        	<div class="lunchboxBottom"></div>
+		        	<div class="lunchbox-priceBig">$12<small>.50</small></div>
+		        </div>
+		        <div class="clearfix" style="padding-left:100px;"><a class="btn btn-primary btn-big"><i class="icon-white icon-shopping-cart"></i> Add to Cart</a></div>
+	        </div>
+        	</div><!-- /row -->
         </div> <!-- /container -->
         
         <div id="footer">
