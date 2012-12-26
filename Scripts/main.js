@@ -1,24 +1,57 @@
-function addToLunchbox(courseJSON){
+var selectCourse = function(courseJSON){
 	var list = $('#lunchbox-'+courseJSON.type);
-	console.log(list.size());
-	if ( courseJSON.type == 'entrees' || courseJSON.type == 'sides' ) {
-		emptyItem = list.find('.lunchbox-emptyItem');
-		console.log(emptyItem.size());
-		if ( emptyItem.size() > 0 ) {
-		
-			$(emptyItem[0]).html( '<i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> ' + courseJSON.name).removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem');
-			
-			return true;
-			
-		} else {
-			alert('no empty item');
-			return false;
-		}
-	}
+	var course = $('.course[data-id="'+courseJSON.id + '"]');
 	if ( courseJSON.type == 'others' ) {
-		list.append( '<li class="lunchbox-filledItem"><i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> ' + courseJSON.name + '</li>').removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem');
+		list.append( '<li class="lunchbox-filledItem" data-id="'+courseJSON.id+'"><i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> ' + courseJSON.name  + '<span class="lunchbox-filledNum">X <input type="text" value="'+ '1' + '" class="input-mini"/></span> = <span class="lunchbox-filledPrice">'+courseJSON.price+'</span>'+ '</li>').removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem');
+	} else {
+		$(emptyItem[0]).html( '<i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> ' + courseJSON.name).removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem').attr('data-id',courseJSON.id);
+
 	}
-	return false;
+}
+
+var unselectCourse = function(courseJSON) {
+	var course = $('.course[data-id="'+courseJSON.id + '"]');
+	var li = $('.lunchbox-filledItem[data-id="'+courseJSON.id+'"]');
+	if (courseJSON.type == 'others') {
+		li.remove();
+	} else {
+		li.html('').removeClass('lunchbox-filledItem').addClass('lunchbox-emptyItem');
+	}
+	course.removeClass('selected');
+}
+
+function flyto(src, dest, callback, arg) {
+
+			
+			var productX 		= src.offset().left;
+			var productY 		= src.offset().top;
+			var basketX 		= dest.offset().left;
+			var basketY 		= dest.offset().top;
+			var gotoX 			= basketX - productX;
+			var gotoY 			= basketY - productY;
+			var newImageWidth 	= src.width() / 3;
+			var newImageHeight	= src.height() / 3;
+			
+			src
+			.clone()
+			.prependTo(src.parent())
+			.css({'position' : 'absolute','z-index':99,})
+			.animate({opacity: 0.4}, 100 )
+			.animate({opacity: 0.1, marginLeft: gotoX, marginTop: gotoY, width: newImageWidth, height: newImageHeight}, 1200, function() {
+				
+				$(this).remove();
+				//success
+				callback.call(this,arg);
+				$.ajax({  
+					type: "POST",  
+					url: "inc/functions.php",  
+					data: { productID: 'nothing', action: "addToBasket"},  
+					success: function(theResponse) {
+											
+					}  
+				});  
+			
+			});	
 }
 $(document).ready(function(){
 	$('.carousel').carousel();
@@ -51,54 +84,38 @@ $(document).ready(function(){
 		} else {
 			li.html('').removeClass('lunchbox-filledItem').addClass('lunchbox-emptyItem');	
 		}
+		var id = li.attr('data-id');
+		$('.course[data-id="' + id + '"]').removeClass('selected');
 	});
 	$('.course').on('click', function(e){
-		$(e.currentTarget).toggleClass('selected');
+		var course = $(e.currentTarget);
+		course.toggleClass('selected');
 		
 		var type = $('.tab-pane.active').attr('data-type');
+		var id = course.attr('data-id');
+		var name = course.find('p:first').html();
 		
-		if ($(e.currentTarget).hasClass('selected')) {
-		var courseImg = $(e.currentTarget).find('img');
-		var lunchbox = $('#lunchbox-'+type);
+		if (course.hasClass('selected')) {
 		
-		var productX 		= courseImg.offset().left;
-		var productY 		= courseImg.offset().top;
-		
-		
-		var basketX 		= lunchbox.offset().left;
-		var basketY 		= lunchbox.offset().top;
-		
-		
-		var gotoX 			= basketX - productX;
-		var gotoY 			= basketY - productY;
-		
-		var newImageWidth 	= courseImg.width() / 3;
-		var newImageHeight	= courseImg.height() / 3;
-		
-		courseImg
-		.clone()
-		.prependTo($(e.currentTarget))
-		.css({'position' : 'absolute','z-index':99,})
-		.animate({opacity: 0.4}, 100 )
-		.animate({opacity: 0.1, marginLeft: gotoX, marginTop: gotoY, width: newImageWidth, height: newImageHeight}, 1200, function() {
+			if ( type == 'entrees' || type == 'sides' ) {
+				emptyItem = $('#lunchbox-'+type + ' .lunchbox-emptyItem');
+				if ( emptyItem.size() < 1 ) {
+					alert('no empty box');
+					course.toggleClass('selected');
+					return;
+				}
+			}
 			
-			$(this).remove();
-		
-		
-			//success
-			addToLunchbox({type:type,name:'Kung Pao Chicken'});
+			var courseImg = course.find('img');
+			var lunchbox = $('#lunchbox-'+type);
 			
-			$.ajax({  
-				type: "POST",  
-				url: "inc/functions.php",  
-				data: { productID: 'nothing', action: "addToBasket"},  
-				success: function(theResponse) {
-										
-				}  
-			});  
-		
-		});
-	}//end if
+			
+			flyto(courseImg, lunchbox, selectCourse, {type:type,name:name,id:id,price:'$7.00'});
+
+		}//end if
+		else {
+			unselectCourse({type:type,id:id});
+		}
 
 	});
 	
