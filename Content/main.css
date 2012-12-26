@@ -795,3 +795,23 @@ a:hover,a:focus,a:active{
 #lunchbox {
 	margin-top: 40px;
 }
+.nav-list > .active > a, .nav-list > .active > a:hover {
+	background:url(Images/texture-orange.png);
+}
+.well {
+	background:url(Images/texture-white.jpg);	
+}
+.accordion-group {
+	border:none;
+}
+
+.accordion-heading {
+	background:url(Images/texture-brown.jpg);
+	border-radius: 4px;
+}
+.accordion-body {
+	background:url(Images/texture-white.jpg);
+}
+.accordion-heading a {
+	color: #FFF;
+}
