@@ -682,10 +682,18 @@ a:hover,a:focus,a:active{
 	cursor: pointer;
 }
 .lunchbox-filledItem .icon-remove {
+	padding-right: 5px;
 	
 }
 .lunchbox-filledItem i:hover {
 	background-image: url(Images/glyphicons-halflings-orange.png);	
+}
+.lunchbox-filledItem img {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin-right: 5px;
+	vertical-align: middle;
 }
 .lunchbox-filledNum {
 	font-size: 11px;

@@ -2,9 +2,9 @@ var selectCourse = function(courseJSON){
 	var list = $('#lunchbox-'+courseJSON.type);
 	var course = $('.course[data-id="'+courseJSON.id + '"]');
 	if ( courseJSON.type == 'others' ) {
-		list.append( '<li class="lunchbox-filledItem" data-id="'+courseJSON.id+'"><i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> ' + courseJSON.name  + '<span class="lunchbox-filledNum">X <input type="text" value="'+ '1' + '" class="input-mini"/></span> = <span class="lunchbox-filledPrice">'+courseJSON.price+'</span>'+ '</li>').removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem');
+		list.append( '<li class="lunchbox-filledItem" data-id="'+courseJSON.id+'"><i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> <img src="' + courseJSON.img + '" />' + courseJSON.name  + '<span class="lunchbox-filledNum">X <input type="text" value="'+ '1' + '" class="input-mini"/></span> = <span class="lunchbox-filledPrice">'+courseJSON.price+'</span>'+ '</li>').removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem');
 	} else {
-		$(emptyItem[0]).html( '<i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> ' + courseJSON.name).removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem').attr('data-id',courseJSON.id);
+		$(emptyItem[0]).html( '<i class="icon-remove icon-brown" title="Remove" rel="tooltip"></i> <img src="' + courseJSON.img + '" />' + courseJSON.name).removeClass('lunchbox-emptyItem').addClass('lunchbox-filledItem').attr('data-id',courseJSON.id);
 
 	}
 }
@@ -110,7 +110,7 @@ $(document).ready(function(){
 			var lunchbox = $('#lunchbox-'+type);
 			
 			
-			flyto(courseImg, lunchbox, selectCourse, {type:type,name:name,id:id,price:'$7.00'});
+			flyto(courseImg, lunchbox, selectCourse, {type:type, name:name, id:id, img:courseImg.attr('src'), price:'$7.00'});
 
 		}//end if
 		else {
